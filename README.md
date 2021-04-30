@@ -3,22 +3,30 @@
 Project : Create a model to detect wanacry malware
 
 WannaCry Ransomware Attack Hybrid Analysis
+
 Nicholas S Milliken
 University of Colorado
 CYBR 5320
 Boulder, CO
 nick.milliken@colorado.edu
+
+
 Xiaosong Fan
 University of Colorado
 CYBR 5320
 Boulder, CO
 xifa4716@colorado.edu
+
+
 Kenneth Freeman
 University of Colorado
 CYBR 5320
 Boulder, CO
 kefr5264@colorado.edu
+
+
 1.Business Understanding
+
 This study is focused on one of the methods used in a large ransomware attack that occurred in 2017
 which was the WannaCry ransomware. The team’s goal is to develop a machine learning model that could
 be used to predict whether network traffic includes malware. To do this we must first gather a dataset and
@@ -37,6 +45,8 @@ qualitative and quantitative analysis and discover the features we want to predi
 feed and report to build our machine learning model. Our overall goal in this project is to discover the attack
 incidents that stand out and unique, and study how different factors contribute to the individuality of these
 incidents.
+
+
 2.Data Understanding
 The data used for the wanacry project was collected from the Hybrid-Analysis website
 (https://www.hybrid-analysis.com/). In order to gain access to an appropriate file for consideration we
@@ -58,6 +68,10 @@ Therefore, the target variable we want to predict is whether an incident is inte
 a prediction using the threat level, threat score, and number of mitre attacks. During the data cleaning
 process, we will remove other fields to streamline our analysis and improve the overall efficiency in model
 development.
+
+
+
+
 3.Data Preparation
 Once access to full API keys is granted after a few business days, they will be imputed into python files
 that are constructed to pull information via json feeds. Time will be spent analyzing the publicly available
@@ -78,6 +92,8 @@ frame.
 With the newly created data frame, we looked at all the columns and its data type. We also created a
 column checking the content of the response, and removed any record with no response content or
 information. This will eliminate any potential empty or null value in the dataset.
+
+
 4.Modeling
 The models created to evaluate all of the pulled and combined data included: Random Forest, Decision
 trees, SVM. The random forest model was run on a 70/30 split and used 100 trees with a max depth of 8 per
@@ -92,6 +108,9 @@ placed into, either wanacry or not wanacry. The data used in this project was si
 University of Colorado Boulder, MS Business Analytics | CYBR 5500 Page 2
 making it easy to see the boundaries created by the model, as one downside to SVM is an overlapping of
 features, fortunately we did not face this issue.
+
+
+
 5.Evaluation
 In the next section we will address the findings of our research. There will be a characterization of the
 data, the scalability of our approach, the model’s ability to identify malicious traffic and a comparison of
@@ -119,6 +138,7 @@ reasonable to say that if we scaled up production the model would hold integrity
 integrity if and only if the data being brought in could easily be put into the categories defined by the
 dataframe. It should be possible to apply this model horizontally across many servers to look for the
 wanacry malware.
+
 5.1 Select a model to recommend for deployment
 After developing three different machine learning models and comparing between the results ,the model
 with the most optimal result is the SVM model with 96.6% of accuracy. The SVM model is also capable to
@@ -128,6 +148,9 @@ a) ROC curve for Random Forest Regression
 b) ROC curve for Decision Tree
 c) Confusion Matrix from the Support Vector Machine
 University of Colorado Boulder, MS Business Analytics | CYBR 5500 Page 4
+
+
+
 6. Deployment
 When the models are adopted in the future, the new users should first apply for a separate API to be
 approved by Hybrid-Analysis before pulling the daily feed data from the reports. Once the API pull is
